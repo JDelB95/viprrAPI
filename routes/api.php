@@ -27,3 +27,5 @@ Route::get('getCurriculum/{Maj_Code}', 'Student\curriculumController@getCurricul
 Route::get('progress/{id}', 'Student\curriculumController@progress');
 Route::get('getProgress/{id}', 'Student\curriculumController@getProgress');
 Route::post('insert/', 'Student\finalScheduleController@insert');
+Route::put('updateCurriculum/{id}', 'Student\curriculumController@updateCurriculum');
+Route::delete('destroy/{id}', 'Student\curriculumController@destroy');

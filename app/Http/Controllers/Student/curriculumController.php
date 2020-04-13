@@ -8,6 +8,16 @@ use Illuminate\Support\Facades\DB;
 use App\Models\curriculumModel;
 class curriculumController extends Controller
 {
+  public function destroy($id){
+    DB::table('curriculum')
+    ->where('Program_ID', $id)
+    ->delete();
+  }
+  public function updateCurriculum($id, Request $request){
+    DB::table('curriculum')
+    ->where('Program_ID', $id)
+    ->update($request->all());
+  }
   public function getCurriculum($Maj_Code){
     return DB::table('curriculum')
     ->select('Program_ID','Maj_Code', 'Course_Code', 'Course_Seq', 'Prereq_ID', 'Course_Desc')
