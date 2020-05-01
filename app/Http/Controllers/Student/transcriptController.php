@@ -22,4 +22,21 @@ class transcriptController extends Controller
       ->where('CWID', $id)
       ->get();
     }
-}
+    public function insertTranscript(Request $request){
+
+      //print_r($request->all());
+      $body = ($request->body);
+      foreach($body as $item){
+        $array = [
+          'CWID' => $item['CWID'],
+          'Course_Code' => $item['Course_Code'],
+          'Course_Comp' => $item['Course_Comp'],
+          'Maj_Code' => $item['Maj_Code'],
+          'Curriculum_ID' => $item['Curriculum_ID']
+        ];
+        DB::table('transcript')->insert($array);
+      }
+  
+      return ["data"=> "Success", "message" => "Entries added successfully"];
+    }
+  }

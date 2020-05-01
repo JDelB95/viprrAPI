@@ -18,4 +18,5 @@ class availableCoursesModel extends Model
       'Days_Of_The_Week',
       'Course_Term',
     ];
+
 }

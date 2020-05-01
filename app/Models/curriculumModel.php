@@ -8,7 +8,7 @@ class curriculumModel extends Model
 {
     //The value for table MUST be the same name of the table that is in our db.
     protected $table ="curriculum";
-    //Add the column names exactly as they are in the transcript table into the $fillable array
+    
     protected $fillable = [
       'Program_ID',
       'Curriculum_ID',
@@ -18,4 +18,8 @@ class curriculumModel extends Model
       'Prereq_ID',
       'Course_Desc',
     ];
+
+    public function trasncriptCourses(){
+      return $this->hasMany('App\Models\transcriptModel','Course_code','Course_code');
+    }
 }

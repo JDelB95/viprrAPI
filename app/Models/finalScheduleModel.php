@@ -13,6 +13,8 @@ class finalScheduleModel extends Model
   protected $fillable = [
     'CWID',
     'CRN',
-    'Date_Registered'
+    'Date_Registered',
+    'Semester_Taken',
+    'Schedule_Num'
   ];
 }
